@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
 
 st.title("Painel de Controle de Atividades")
 
@@ -30,7 +29,7 @@ if df:
 
     # Criação dos gráficos
     st.subheader("Quantidade de Peças por Atividade")
-    fig = px.bar(df, x="data", y="unidades", color="atividades", title="Atividades ao Longo do Tempo")
+    fig = st.bar(df, x="data", y="unidades", color="atividades", title="Atividades ao Longo do Tempo")
     fig.update_layout(xaxis_title='Data', yaxis_title='Unidades')
     st.plotly_chart(fig)
 
